@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toh Yun Ning — Data Science</title>
+<meta name="description" content="Data Science graduate (TAR UMT, 2026). Machine learning for manufacturing inspection, data engineering, and enterprise database systems.">
+<meta property="og:title" content="Toh Yun Ning — Data Science">
+<meta property="og:description" content="Machine learning for manufacturing inspection, streaming data pipelines, and enterprise database systems. Graduating July 2026.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E9EDF0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314202B'/%3E%3Cpath d='M6 22h20M6 22v-4M13 22v-7M20 22v-10M27 22v-6' stroke='%23E9EDF0' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E9EDF0;
+  --plate:#FFFFFF;
+  --ink:#14202B;
+  --graphite:#54687A;
+  --signal:#0E6155;
+  --signal-deep:#083D35;
+  --trace:#C3CFD7;
+  --rule:#D6DEE3;
+  --measure:66ch;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,serif;
+  font-size:17px;line-height:1.62;font-variant-numeric:tabular-nums;
+}
+h1,h2,h3,h4,.sans{font-family:Archivo,"Helvetica Neue",Arial,sans-serif}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+a{color:var(--signal);text-decoration:none;border-bottom:1px solid var(--trace);transition:border-color .15s}
+a:hover{border-color:var(--signal)}
+a:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+p{max-width:var(--measure)}
+img{max-width:100%;height:auto;display:block}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+/* ---------- masthead ---------- */
+.masthead{position:sticky;top:0;z-index:20;background:rgba(233,237,240,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.masthead-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:14px 0}
+.mark{font-family:Archivo;font-weight:700;font-size:.95rem;letter-spacing:.01em}
+.masthead nav{font-family:Archivo;font-size:.88rem;display:flex;gap:20px}
+.masthead nav a{border:0;color:var(--graphite)}
+.masthead nav a:hover{color:var(--signal)}
+
+/* ---------- hero ---------- */
+.hero{padding:80px 0 12px}
+.hero h1{
+  font-size:clamp(2.5rem,6vw,4.3rem);font-weight:700;line-height:1.03;
+  letter-spacing:-.028em;margin:0 0 26px;max-width:19ch;
+}
+.hero .lede{font-size:1.2rem;max-width:58ch;margin:0}
+.hero .facts{font-family:Archivo;font-size:.9rem;color:var(--graphite);margin:22px 0 0;line-height:1.85}
+
+.readout{margin:56px 0 0;border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(4,1fr)}
+.readout .cell{padding:18px 20px 22px 0;border-right:1px solid var(--rule);position:relative}
+.readout .cell:last-child{border-right:0}
+.readout .cell::before{content:"";position:absolute;top:0;left:0;width:1px;height:9px;background:var(--ink)}
+.readout .val{font-family:Archivo;font-weight:600;font-size:clamp(1.55rem,3.2vw,2.1rem);letter-spacing:-.02em;line-height:1.1;color:var(--signal-deep)}
+.readout .unit{font-family:Archivo;font-size:.8rem;color:var(--graphite);margin-top:5px}
+.readout .what{font-size:.93rem;margin-top:9px;line-height:1.4}
+
+/* ---------- sections ---------- */
+section{padding:88px 0 0;scroll-margin-top:70px}
+.sec-head{border-top:1px solid var(--ink);padding-top:14px;margin-bottom:36px;display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.sec-head h2{font-size:1.4rem;font-weight:600;letter-spacing:-.012em;margin:0}
+.sec-head .note{font-family:Archivo;font-size:.85rem;color:var(--graphite)}
+
+.statement p{font-size:1.08rem;margin:0 0 20px}
+.statement strong{font-weight:600}
+
+/* ---------- how I work ---------- */
+.habits{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px;border-top:1px solid var(--ink)}
+.habit{padding:20px 0 6px;border-right:1px solid var(--rule);padding-right:32px}
+.habit:last-child{border-right:0}
+.habit h4{font-family:Archivo;font-size:.98rem;font-weight:600;margin:0 0 10px;color:var(--signal-deep)}
+.habit p{font-size:.98rem;margin:0;max-width:none}
+
+/* ---------- work records ---------- */
+.record{padding:36px 0 40px;border-top:1px solid var(--rule)}
+.record:first-of-type{border-top:0;padding-top:6px}
+.rec-top{display:grid;grid-template-columns:1fr 260px;gap:44px;align-items:start}
+.rec-title h3{font-size:1.42rem;font-weight:600;letter-spacing:-.014em;margin:0 0 6px;line-height:1.2}
+.rec-title .sub{font-family:Archivo;font-size:.97rem;color:var(--graphite);margin:0;max-width:56ch}
+.meta{font-family:Archivo;font-size:.83rem;color:var(--graphite);line-height:1.55}
+.meta .yr{color:var(--ink);font-weight:600;display:block;margin-bottom:9px}
+.meta .stack{display:block;margin-bottom:11px}
+.meta .role{display:block;border-left:2px solid var(--signal);padding-left:11px}
+
+.rec-body{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:26px;align-items:start}
+.rec-body.single{grid-template-columns:1fr;max-width:var(--measure)}
+.rec-body p{margin:0 0 14px}
+.rec-body p:last-child{margin-bottom:0}
+
+figure{margin:0;background:var(--plate);border:1px solid var(--rule);padding:14px}
+figure img{margin:0 auto}
+figcaption{font-family:Archivo;font-size:.8rem;color:var(--graphite);margin-top:11px;line-height:1.5;border-top:1px solid var(--rule);padding-top:9px}
+
+.result{background:var(--plate);border-left:3px solid var(--signal);padding:15px 18px;margin:0 0 16px;font-size:.97rem}
+.result b{font-family:Archivo;font-weight:600;font-size:.84rem;color:var(--signal-deep);display:block;margin-bottom:5px}
+.result p{max-width:none;margin:0}
+
+.caveat{font-size:.95rem;color:var(--graphite);border-top:1px dotted var(--trace);padding-top:12px;margin-top:4px}
+.caveat b{font-family:Archivo;font-weight:600;font-size:.84rem;color:var(--ink)}
+
+table.cmp{border-collapse:collapse;font-size:.93rem;margin:10px 0 12px;width:100%}
+table.cmp th,table.cmp td{text-align:left;padding:7px 14px 7px 0;border-bottom:1px solid var(--rule)}
+table.cmp th{font-family:Archivo;font-weight:600;font-size:.8rem;color:var(--graphite)}
+table.cmp td.n{font-family:Archivo;font-weight:600}
+table.cmp tr.win td{color:var(--signal-deep)}
+
+/* ---------- compact index ---------- */
+.index-item{display:grid;grid-template-columns:250px 1fr;gap:44px;padding:22px 0;border-top:1px solid var(--rule)}
+.index-item h3{font-size:1.06rem;font-weight:600;margin:0 0 5px}
+.index-item p{margin:0;font-size:.97rem;color:var(--graphite);max-width:62ch}
+
+/* ---------- experience ---------- */
+.job{display:grid;grid-template-columns:250px 1fr;gap:44px;padding:26px 0;border-top:1px solid var(--rule)}
+.job:first-of-type{border-top:0;padding-top:2px}
+.job h3{font-size:1.12rem;font-weight:600;margin:0 0 3px}
+.job .where{font-family:Archivo;font-size:.92rem;color:var(--graphite);margin:0 0 12px}
+.job ul{margin:0;padding-left:18px;max-width:var(--measure)}
+.job li{margin-bottom:7px}
+
+/* ---------- skills ---------- */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+.skillrow{padding:16px 0;border-top:1px solid var(--rule)}
+.skillrow h4{font-family:Archivo;font-size:.85rem;font-weight:600;color:var(--graphite);margin:0 0 6px}
+.skillrow p{margin:0;font-size:.98rem;max-width:none}
+
+/* ---------- contact ---------- */
+.contact{padding:92px 0 100px}
+.contact-inner{border-top:2px solid var(--ink);padding-top:26px}
+.contact h2{font-size:1.85rem;font-weight:700;letter-spacing:-.02em;margin:0 0 14px;max-width:24ch}
+.contact .lines{font-family:Archivo;font-size:1rem;line-height:2;margin-top:20px}
+footer{font-family:Archivo;font-size:.83rem;color:var(--graphite);padding-bottom:40px}
+
+/* ---------- metric comparison bars ---------- */
+.bars{margin:2px 0 0}
+.bar-row{margin-bottom:16px}
+.bar-label{font-family:Archivo;font-size:.87rem;display:flex;justify-content:space-between;gap:12px;margin-bottom:6px}
+.bar-label .nm{color:var(--ink)}
+.bar-label .vl{font-weight:600;color:var(--signal-deep)}
+.bar-track{height:9px;background:var(--plate);border:1px solid var(--rule)}
+.bar-fill{height:100%;background:var(--signal);display:block}
+.bar-fill.alt{background:var(--trace)}
+.bar-note{font-family:Archivo;font-size:.79rem;color:var(--graphite);margin-top:10px;line-height:1.5}
+
+@media print{
+  .masthead{position:static;background:none}
+  body{background:#fff;font-size:11pt}
+  figure,.result{break-inside:avoid}
+  section{padding-top:24px}
+  a{color:var(--ink);border:0}
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .readout .cell{opacity:0;transform:translateY(7px);animation:rise .5s cubic-bezier(.2,.7,.3,1) forwards}
+  .readout .cell:nth-child(1){animation-delay:.18s}
+  .readout .cell:nth-child(2){animation-delay:.28s}
+  .readout .cell:nth-child(3){animation-delay:.38s}
+  .readout .cell:nth-child(4){animation-delay:.48s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+
+@media (max-width:900px){
+  .rec-top,.rec-body{grid-template-columns:1fr;gap:20px}
+  .rec-body{margin-top:20px}
+  .index-item,.job{grid-template-columns:1fr;gap:12px}
+  .habits{grid-template-columns:1fr}
+  .habit{border-right:0;border-bottom:1px solid var(--rule);padding-right:0;padding-bottom:18px}
+  .habit:last-child{border-bottom:0}
+  .skills{grid-template-columns:1fr}
+  .readout{grid-template-columns:repeat(2,1fr)}
+  .readout .cell:nth-child(2){border-right:0}
+  .readout .cell:nth-child(3),.readout .cell:nth-child(4){border-top:1px solid var(--rule);padding-top:18px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .hero{padding:52px 0 0}
+  section{padding:64px 0 0}
+  .masthead nav{gap:14px;font-size:.82rem}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <span class="mark">Toh Yun Ning</span>
+    <nav>
+      <a href="#approach">Approach</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>I build data systems, then measure whether they actually work.</h1>
+    <p class="lede">Data Science (Hons) at TAR UMT, graduating July 2026. Machine learning for manufacturing inspection, streaming data pipelines, and enterprise database systems — nearly all of it delivered in teams, to a brief.</p>
+    <p class="facts">
+      CGPA 3.8 — President's List and three Dean's List trimesters<br>
+      R&amp;D internships at ViTrox Technologies and Gospower Electric<br>
+      Penang-based, relocating to Kuala Lumpur for the right role
+    </p>
+
+    <div class="readout">
+      <div class="cell">
+        <div class="val">88.1<span style="font-size:.6em">%</span></div>
+        <div class="unit">mean IoU</div>
+        <div class="what">Solder void segmentation on PCB X-rays</div>
+      </div>
+      <div class="cell">
+        <div class="val">97.1<span style="font-size:.6em">%</span></div>
+        <div class="unit">accuracy</div>
+        <div class="what">BERT sentiment classifier, 6.3M reviews</div>
+      </div>
+      <div class="cell">
+        <div class="val">0.989</div>
+        <div class="unit">normalised correlation</div>
+        <div class="what">Watermark recovery under hybrid attack</div>
+      </div>
+      <div class="cell">
+        <div class="val">6</div>
+        <div class="unit">layers</div>
+        <div class="what">Sensing to dashboard in one IoT pipeline</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="approach" class="statement">
+    <div class="sec-head">
+      <h2>What I'm looking for</h2>
+      <span class="note">Technology &amp; Transformation, September 2026</span>
+    </div>
+    <p>Most of my work sits where machine learning meets manufacturing quality. At ViTrox I trained segmentation models on PCB defect data for automated X-ray inspection; my final year project extends that into solder void detection, using data the company sponsored. At Gospower I ran reliability test campaigns on server power supplies and wrote the C# automation around them.</p>
+    <p>The rest is engineering and data platforms — Kafka and Spark pipelines, Oracle PL/SQL, dimensional warehouse design. That mix points me at the Engineering, AI &amp; Data portfolio, though the database and ETL work sits just as naturally in Enterprise Technology &amp; Performance, and I'd be glad to be placed where the need is.</p>
+    <p>What I'd want a hiring team to know: <strong>my strongest projects are the ones where I found that a good-looking number was wrong.</strong> A watermarking model that scored suspiciously flat across every attack, a lexicon with 99.75% coverage that could only retrieve 38% of its own entries. Catching that before a client does seems like the whole job.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>How I work</h2>
+      <span class="note">Three habits, and the evidence behind them</span>
+    </div>
+    <div class="habits">
+      <div class="habit">
+        <h4>Untangling a problem</h4>
+        <p>Testing whether young sandal wearers also wear calf socks, my first analysis came back essentially empty. Rather than writing it up as a null result, I worked out why: nearly all responses sat in one category, so a five-point scale was spreading almost no signal. Recollapsing to binary surfaced the real pattern. The answer was there; the measurement was wrong.</p>
+      </div>
+      <div class="habit">
+        <h4>Explaining it to someone else</h4>
+        <p>On the data engineering pipeline I wrote the system documentation — architecture diagram, process flowcharts, circuit diagrams, schema reference, setup guide — because the project was defended in a group session where any member could be asked about any component. Writing the explanation is how I check I actually understand something.</p>
+      </div>
+      <div class="habit">
+        <h4>Working to a defined role</h4>
+        <p>Eight of my nine projects were team projects, in groups of three to five. Each entry below says which part was mine and which parts weren't, because I'd rather be asked about work I can actually defend. Where the split was genuinely collective, it says that too.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <span class="note">Five of nine — the rest are indexed below</span>
+    </div>
+
+    <!-- FYP -->
+    <article class="record">
+      <div class="rec-top">
+        <div class="rec-title">
+          <h3>Solder void detection in LGA components</h3>
+          <p class="sub">Semantic segmentation on X-ray images to find voids inside solder joints, where a human inspector sees only faint grey-on-grey contrast.</p>
+        </div>
+        <div class="meta">
+          <span class="yr">2026 · Final Year Project</span>
+          <span class="stack">PyTorch · SegNeXt · DeepLabV3+ · Streamlit</span>
+          <span class="role">Individual project. Data sponsored by ViTrox Technologies.</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div>
+          <p>Voids trapped in Land Grid Array solder joints weaken the electrical and thermal path, but they're hard to see: X-ray images give low contrast, irregular shapes, and heavy class imbalance, since a void occupies a tiny fraction of the frame.</p>
+          <p>I modified and compared two segmentation architectures on the same sponsored dataset — SegNeXt, built on cheap convolutional attention, and DeepLabV3+ with online hard example mining to push the loss toward the difficult pixels the imbalance would otherwise drown out.</p>
+        </div>
+        <div>
+          <div class="result">
+            <b>Result — mean IoU</b>
+            <div class="bars">
+              <div class="bar-row">
+                <div class="bar-label"><span class="nm">Modified SegNeXt</span><span class="vl">88.1%</span></div>
+                <div class="bar-track"><span class="bar-fill" style="width:88.1%"></span></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-label"><span class="nm">Modified DeepLabV3+ (OHEM)</span><span class="vl">82.5%</span></div>
+                <div class="bar-track"><span class="bar-fill alt" style="width:82.5%"></span></div>
+              </div>
+              <p class="bar-note">Pixel accuracy: 97.0% and 94.9% respectively. Accuracy is the less informative of the two — voids are small, so a model predicting "no void" everywhere still scores well on it.</p>
+            </div>
+          </div>
+          <div class="caveat">
+            <b>Deployment.</b> The winning model runs behind a Streamlit application, so an inspector uploads an X-ray and sees the segmentation overlaid rather than reading a metric. Imagery and dataset are covered by a non-disclosure agreement and aren't shown here.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- New Balance -->
+    <article class="record">
+      <div class="rec-top">
+        <div class="rec-title">
+          <h3>Consumer footwear study for New Balance</h3>
+          <p class="sub">A client-shaped engagement: collect primary data, test five hypotheses, deliver product and marketing recommendations the client could act on.</p>
+        </div>
+        <div class="meta">
+          <span class="yr">2024 · Data Visualization</span>
+          <span class="stack">SAS · Google Forms · survey design</span>
+          <span class="role">Team of 5. I designed the questionnaire the whole study ran on, owned one of five hypotheses, and wrote the closing recommendations.</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div>
+          <p>The brief was a company losing a customer segment it couldn't see clearly — plenty of data, no way to turn it into decisions. I designed the survey instrument every team member's analysis depended on: ordinal scales with consistent bands so responses could be encoded rather than retrofitted, income captured as ranges to avoid non-response on a sensitive question, and a multiple-choice grid so one question covered four product categories without survey fatigue.</p>
+          <p>Writing the closing section meant working with a mixed evidence base: two of five hypotheses reached significance, three didn't. I structured the recommendations by confidence level rather than treating every finding as equally actionable — firm proposals where the results supported them, clearly labelled directional guidance where they didn't.</p>
+        </div>
+        <div>
+          <div class="result">
+            <b>What I recommended</b>
+            <p>My hypothesis tested whether young sandal wearers also wear calf socks, motivated by a styling trend and its potential as a bundling opportunity. The analysis found 89.7% of frequent sandal wearers never wear calf socks. My hypothesis had argued <em>for</em> a bundle; the data argued against it.</p>
+          </div>
+          <div class="caveat">
+            <b>How I reported it.</b> I recommended against a mainstream bundle and scoped it to a limited-edition niche instead, and described the association as a non-significant trend rather than overstating it to make the story cleaner.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Lexicon -->
+    <article class="record">
+      <div class="rec-top">
+        <div class="rec-title">
+          <h3>Malay lexicon streaming pipeline</h3>
+          <p class="sub">Scheduled pipeline that scrapes three Malay-language sources and builds a queryable lexicon as a graph, growing on every run.</p>
+        </div>
+        <div class="meta">
+          <span class="yr">2024 · Data Engineering</span>
+          <span class="stack">Kafka · PySpark · Hadoop · Neo4j · Redis · Selenium · cron</span>
+          <span class="role">Team of 4. I owned the ingestion and streaming layer: two of three scrapers, the cleaning stage, and the Kafka producer and consumer.</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div>
+          <p>Malay NLP resources are thin. The pipeline combines an official dictionary, a proverb corpus, and live news text: articles are published to a Kafka topic, converted to Parquet in HDFS, word-counted through Hadoop MapReduce, enriched with definitions and part-of-speech tags, and loaded into Neo4j as a graph with synonym and antonym edges. Cron drives incremental runs.</p>
+          <p>I built the dictionary and proverb scrapers, the cleaning stage that made scraped output consistent enough to load without creating duplicate graph nodes, and both sides of the Kafka layer.</p>
+        </div>
+        <div>
+          <div class="result">
+            <b>The design decision I'd expect to be asked about</b>
+            <p>Kafka looks wrong for a batch pipeline — until you notice that scheduling is exactly why you need it. Articles published between scheduled runs sit durably in the topic until the next job consumes them. Decoupling producer from consumer is what makes a cron-driven pipeline safe to miss a beat.</p>
+          </div>
+          <div class="caveat">
+            <b>What the evaluation showed.</b> Coverage reached 99.75%, but token-matching accuracy was only 38%. The lexicon held the words and couldn't reliably retrieve them — a tokenisation and query problem, not a data gap. Malay is morphologically rich, so exact-match queries against surface forms miss when the stored form carries different affixes.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- BERT -->
+    <article class="record">
+      <div class="rec-top">
+        <div class="rec-title">
+          <h3>Sentiment classification on 6.3M Yelp reviews</h3>
+          <p class="sub">Testing whether a fine-tuned transformer beats feature-engineered classical ML without any of the preprocessing the classical approach depends on.</p>
+        </div>
+        <div class="meta">
+          <span class="yr">2025 · Artificial Intelligence</span>
+          <span class="stack">PyTorch · Hugging Face · BERT · scikit-learn</span>
+          <span class="role">Team of 3, one model each. I owned BERT end to end and the shared sampling methodology.</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div>
+          <p>We dropped 3-star reviews as genuinely ambiguous, removed duplicates, and sampled down to a workable subset. Rather than assuming a sampling strategy, we ran a preliminary experiment comparing stratified against random balanced sampling — then split the decision: balanced sampling for training so the model learns both classes, stratified for the test set so evaluation reflects the real class distribution.</p>
+          <p>My tuning ran three versions, each answering a diagnosed failure rather than sweeping a grid. Version 1 overfit, so version 2 shortened sequences and raised regularisation. That over-corrected into underfitting, so version 3 walked it back selectively — dropout split asymmetrically between encoder and classifier head, gradient accumulation to keep effective batch size while allowing noisier steps, and early stopping switched from loss to F1, because loss can improve while minority-class performance doesn't.</p>
+          <table class="cmp">
+            <tr><th>Model</th><th>Accuracy</th><th>Macro F1</th></tr>
+            <tr class="win"><td>BERT (mine)</td><td class="n">97.10%</td><td class="n">96.23%</td></tr>
+            <tr><td>RoBERTa-CNN</td><td class="n">97.00%</td><td class="n">—</td></tr>
+            <tr><td>SVM + TF-IDF</td><td class="n">94.15%</td><td class="n">93%</td></tr>
+          </table>
+          <div class="caveat">
+            <b>Where it fails.</b> Sarcasm. "Oh great, another broken phone" reads as positive, and no amount of tuning fixes that — sarcasm inverts sentiment through context the lexical cues actively contradict.
+          </div>
+        </div>
+        <figure>
+          <img src="img/bert-confusion.png" alt="Confusion matrix showing 491 true negatives, 1451 true positives, 21 false positives and 37 false negatives across 2000 test samples." width="760" height="671" loading="lazy">
+          <figcaption>Test set, 2,000 samples: 21 false positives against 37 false negatives. ROC AUC 0.9933.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- Oracle -->
+    <article class="record">
+      <div class="rec-top">
+        <div class="rec-title">
+          <h3>Bus station management system</h3>
+          <p class="sub">Business rules pushed into the database as procedures and compound triggers, rather than left to application code.</p>
+        </div>
+        <div class="meta">
+          <span class="yr">2025 · Advanced Database</span>
+          <span class="stack">Oracle · PL/SQL · SQL*Plus</span>
+          <span class="role">Team of 5. I built the core operational schema and the transactional logic: scheduling, booking, cancellation, and reporting.</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div>
+          <p>Bus operations carry constraints a plain schema can't enforce. A bus can't run two overlapping schedules; a driver can't be double-booked or assigned on an expired licence; cancelling a schedule has to cascade through every ticket and booking attached to it.</p>
+          <p>The scheduling procedure detects conflicts with deliberately different tolerances — a bus can't be scheduled within two hours of another departure, a driver within four. One constraint is mechanical turnaround, the other is human rest. Every operation writes to an audit table capturing old and new values, the user, and the outcome, including failures: an audit trail that only records successes can't tell you who tried something they shouldn't have.</p>
+          <p><a href="https://github.com/YunnNing/Advance-DB-Bus-Station-Management-System">Repository</a></p>
+        </div>
+        <div>
+          <div class="result">
+            <b>The piece I'd walk through on a whiteboard</b>
+            <p>Cancellation status can't be computed row by row, because one booking can hold tickets across several schedules — the correct status is only knowable once the statement finishes. I used a compound trigger: the row-level phase cancels tickets and collects affected booking IDs into a collection, and the statement-level phase deduplicates and recalculates each booking once. A simple row trigger would either query a mutating table or write the wrong status.</p>
+          </div>
+          <div class="caveat">
+            <b>A bug I found reviewing my own code.</b> Cancellation IDs come from a counter that resets each statement, so a second cancellation collides with existing rows — the trigger even creates a sequence and never uses it. It passes a single-run demo and fails in production. That's the class of defect I now look for first.
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>Also built</h2>
+      <span class="note">Full write-ups available on request</span>
+    </div>
+
+    <div class="index-item">
+      <div class="meta"><span class="yr">2025</span><span class="stack">LangChain · Ollama · LLaMA 3 · ChromaDB · Streamlit</span><span class="role">Team of 3. I owned models integration and evaluation.</span></div>
+      <div>
+        <h3>Local PDF question-answering chatbot</h3>
+        <p>Retrieval-augmented chatbot running entirely on local hardware, so documents never leave the machine and there's no per-query cost. I owned the retrieval and generation pipeline: chunking strategy chosen by experiment, embedding and model selection under a hardware ceiling, and MMR retrieval to stop near-duplicate chunks wasting the context window.</p>
+        <figure style="margin-top:16px;max-width:620px">
+          <img src="img/rag-architecture.png" alt="System architecture: browser and authentication layer over MySQL, a services layer routing PDF processing into ChromaDB embeddings and user queries into the chatbot, with Ollama generating responses and MongoDB storing conversation history." width="1000" height="1084" loading="lazy">
+          <figcaption>Retrieval and generation path, from PDF upload through embedding storage to a grounded answer.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="index-item">
+      <div class="meta"><span class="yr">2025</span><span class="stack">TensorFlow · CNN encoder–decoder</span><span class="role">Team of 3, one model each. I owned the CNN.</span></div>
+      <div>
+        <h3>Robust image watermarking</h3>
+        <p>Attack-aware CNN embedding a colour watermark that survives social-media recompression, benchmarked against a published baseline across ten hybrid attacks. My scores held between 0.9886 and 0.9889 where the baseline fell to 0.86 — so flat that I flagged it as probable metric saturation rather than presenting it as a clean win.</p>
+        <figure style="margin-top:16px;max-width:640px">
+          <img src="img/watermark-result.png" alt="Six panels: original cover image, watermarked version, and version after combined Gaussian and salt-and-pepper noise attack; below, the original watermark and the recovered watermark, with NC 0.9928 and PSNR 23.21 dB." width="1100" height="744" loading="lazy">
+          <figcaption>Watermark recovered after a combined noise attack. NC 0.9928, PSNR 23.21 dB.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="index-item">
+      <div class="meta"><span class="yr">2026</span><span class="stack">Oracle · PL/SQL · SCD Type 2</span><span class="role">Team of 4. I wrote three executive reports.</span></div>
+      <div>
+        <h3>Bus operations data warehouse</h3>
+        <p>Constellation schema with shared dimensions over multiple fact tables. I wrote three cursor-driven executive reports covering monthly revenue growth, route profitability with seasonal variance, and company performance ranking — each filtering on current-version rows so slowly changing dimensions don't silently inflate the totals. <a href="https://github.com/YunnNing/Data-Warehousing-PL-SQL">Repository</a></p>
+        <figure style="margin-top:16px">
+          <img src="img/constellation-erd.png" alt="Constellation schema entity relationship diagram: shared date, member, bus, station, route and coupon dimensions connected to booking, ticket, feedback and maintenance fact tables." width="1400" height="1195" loading="lazy">
+          <figcaption>Constellation schema — shared dimensions across several fact tables. Team-designed; my work sat in the reporting layer above it.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="index-item">
+      <div class="meta"><span class="yr">2026</span><span class="stack">ESP32-C6 · MQTT · Node-RED · Firebase · Flask</span><span class="role">Team of 4. I owned actuator firmware, orchestration, and feeding logic.</span></div>
+      <div>
+        <h3>IoT smart pet feeder</h3>
+        <p>RFID-identified per-pet portioning with dual load cells measuring both storage and what was actually eaten. Sensing and actuation run on separate boards over MQTT — servo noise and blocking delays corrupt load cell readings, so isolating them physically was the only way to get clean weights. The awkward part: a load cell reads noise while an animal is eating from the bowl, so consumption has to be captured as a settled snapshot rather than sampled live. <a href="https://github.com/YunnNing/IoT-Smart-Pet-Feeder">Repository</a></p>
+        <figure style="margin-top:16px">
+          <img src="img/iot-architecture.png" alt="Six-layer architecture: ESP32 sensing and actuator boards, MQTT messaging, Node-RED orchestration, Flask and WebSocket application layer, Firebase data layer, and Telegram notifications." width="1000" height="632" loading="lazy">
+          <figcaption>System architecture, one of the diagrams I produced for the project documentation.</figcaption>
+        </figure>
+        <figure style="margin-top:14px">
+          <img src="img/iot-dashboard.png" alt="Live monitoring dashboard showing temperature, humidity, heat index, storage level, leftover level, fan status and RFID activity, with environmental and system statistics below." width="1200" height="576" loading="lazy">
+          <figcaption>Live dashboard fed by the Node-RED layer — storage and leftover levels are the two load cell readings.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="index-item">
+      <div class="meta"><span class="yr">2024</span><span class="stack">Python · scikit-learn · SMOTE</span><span class="role">Team of 4.</span></div>
+      <div>
+        <h3>AIDS patient mortality prediction</h3>
+        <p>Binary classifier on clinical trial data following CRISP-DM end to end, comparing four models. Random Forest won at 0.84 macro F1. Macro rather than weighted, because survival and mortality matter equally in a clinical setting and weighted averaging lets the majority class dominate.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head">
+      <h2>Experience</h2>
+    </div>
+
+    <div class="job">
+      <div class="meta"><span class="yr">Jan – Jul 2026</span><span class="stack">Dongguan, China</span></div>
+      <div>
+        <h3>R&amp;D Intern</h3>
+        <p class="where">Gospower Electric Technology Co., Ltd.</p>
+        <ul>
+          <li>Rotated across a server power-supply manufacturing pipeline — production, SMT and AOI, EMC and reliability testing, automation, and QC.</li>
+          <li>Ran automated test campaigns on a Chroma 8000 system across eleven test types, including surge current, over-current protection, and dynamic load.</li>
+          <li>Built C# test-automation software (Windows Forms, NI-VISA) for the in-house automated test system, and completed STM32 firmware exercises covering interrupts, PWM, and ADC/DMA.</li>
+          <li>Worked directly with yield and defect-tracking pipelines in high-volume electronics manufacturing.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="meta"><span class="yr">Oct 2023 – Feb 2024</span><span class="stack">Batu Kawan, Penang</span></div>
+      <div>
+        <h3>R&amp;D Intern</h3>
+        <p class="where">ViTrox Technologies Sdn Bhd</p>
+        <ul>
+          <li>Labelled PCB defect datasets and trained PyTorch image segmentation models supporting automated X-ray inspection research.</li>
+          <li>Produced technical evaluation reports benchmarking model performance for the R&amp;D team.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head">
+      <h2>Technical skills</h2>
+    </div>
+    <div class="skills">
+      <div class="skillrow">
+        <h4>Languages</h4>
+        <p>Python, SQL (Oracle PL/SQL, MySQL), R, SAS, Java, C, C++, C#, JavaScript, HTML/CSS</p>
+      </div>
+      <div class="skillrow">
+        <h4>Machine learning</h4>
+        <p>PyTorch, TensorFlow, scikit-learn, BERT and Transformers, semantic segmentation, NLP</p>
+      </div>
+      <div class="skillrow">
+        <h4>Data engineering</h4>
+        <p>Kafka, Spark, Hadoop and MapReduce, ETL, star and constellation schema design, SCD Type 2</p>
+      </div>
+      <div class="skillrow">
+        <h4>Databases</h4>
+        <p>Oracle, MySQL, Neo4j, Redis, Firebase, ChromaDB</p>
+      </div>
+      <div class="skillrow">
+        <h4>Tools</h4>
+        <p>Power BI, SAS Viya, Git, Linux, Jupyter, Google Colab, Streamlit, Node-RED</p>
+      </div>
+      <div class="skillrow">
+        <h4>Education</h4>
+        <p>BSc Data Science (Hons), TAR UMT, 2024–2026 — CGPA 3.8. Diploma in Computer Science, CGPA 3.9.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="wrap contact" id="contact">
+  <div class="contact-inner">
+    <h2>Available for the September 2026 intake</h2>
+    <p>Graduating July 2026 and able to relocate to Kuala Lumpur. Happy to walk through any of these projects in more detail, including the parts that didn't work.</p>
+    <div class="lines">
+      <a href="mailto:yunningtoh@gmail.com">yunningtoh@gmail.com</a><br>
+      <a href="https://github.com/YunnNing/Advance-DB-Bus-Station-Management-System">Selected code on GitHub</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <footer>Penang, Malaysia</footer>
+</div>
+
+</body>
+</html>

@@ -854,6 +854,10 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
 <script>
 (function(){
   "use strict";
+  document.querySelectorAll('a[href^="http"]').forEach(function(a){
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  });
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---- theme (lightbox view) ---- */

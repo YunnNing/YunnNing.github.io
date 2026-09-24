@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Toh Yun Ning — Data Science</title>
-<meta name="description" content="Data Science graduate (TAR UMT, 2026). Machine learning for manufacturing inspection, data engineering, and enterprise database systems. Based in Penang, Malaysia.">
+<meta name="description" content="Data Science graduate (TAR UMT, 2026). Machine learning for manufacturing inspection, data engineering, and enterprise database systems.">
 <meta property="og:title" content="Toh Yun Ning — Data Science">
-<meta property="og:description" content="Machine learning for manufacturing inspection, streaming data pipelines, and enterprise database systems.">
+<meta property="og:description" content="Machine learning for manufacturing inspection, streaming data pipelines, and enterprise database systems. Graduating July 2026.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yunnning.github.io/">
 <meta property="og:image" content="https://yunnning.github.io/img/og.png">
@@ -70,7 +70,7 @@ img{max-width:100%;display:block;height:auto}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:3px}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:26px;padding-right:26px}
 
 /* ============ scroll progress ============ */
 #progress{
@@ -103,7 +103,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (max-width:760px){.nav nav a{display:none}}
 
 /* ============ hero ============ */
-.hero{padding:74px 0 64px}
+.hero{padding:52px 0 60px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 268px;gap:60px;align-items:start}
 
 .status{
@@ -118,34 +118,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   100%{box-shadow:0 0 0 0 transparent}
 }
 
-.hero h1{font-size:clamp(1.85rem,5.4vw,3.75rem);line-height:1.06;margin-bottom:18px;max-width:16ch}
-.detect{max-width:100%}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.04;letter-spacing:-.03em;margin-bottom:14px}
 
-/* signature: the detection mask */
-.detect{position:relative;display:inline-block;isolation:isolate}
-.detect::before{
-  content:"";position:absolute;z-index:-1;inset:-.06em -.22em -.1em -.18em;
-  background:var(--signal-soft);
-  border-radius:36% 64% 58% 42% / 52% 44% 56% 48%;
-  transform-origin:left center;transform:scaleX(0);
-  animation:mask .85s cubic-bezier(.2,.75,.25,1) .55s forwards;
-}
-.detect::after{
-  content:"";position:absolute;z-index:-1;inset:-.16em -.3em -.2em -.26em;
-  border:1.5px dashed var(--signal);border-radius:5px;opacity:0;
-  animation:boxIn .4s ease 1.25s forwards;
-}
-.detect .conf{
-  position:absolute;left:100%;top:50%;transform:translateY(-50%);margin-left:16px;
-  font-family:var(--mono);font-size:.72rem;font-weight:400;letter-spacing:.02em;
-  color:var(--signal);white-space:nowrap;
-  opacity:0;animation:boxIn .4s ease 1.45s forwards;
-}
-.detect .conf::before{content:"";display:inline-block;width:10px;height:1px;background:var(--signal);vertical-align:middle;margin-right:7px}
-@keyframes mask{to{transform:scaleX(1)}}
-@keyframes boxIn{to{opacity:1}}
 
-.role{font-family:var(--mono);font-size:.86rem;color:var(--probe);min-height:1.5em;margin-bottom:20px}
+.role{font-family:var(--mono);font-size:.86rem;color:var(--probe);min-height:1.6em;margin-bottom:22px}
 .role .caret{color:var(--signal);animation:blink .95s step-end infinite}
 @keyframes blink{50%{opacity:0}}
 
@@ -196,26 +172,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .cell .w{font-size:.85rem;color:var(--muted);margin-top:11px;line-height:1.45}
 
 /* ============ sections ============ */
-section{padding:78px 0;border-top:1px solid var(--rule)}
-.shead{margin-bottom:34px}
+section{padding:56px 0;border-top:1px solid var(--rule)}
+.shead{margin-bottom:32px}
 .shead h2{font-size:clamp(1.5rem,3vw,2.05rem);margin-bottom:6px}
 .shead .note{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
 
-.prose-grid{display:grid;grid-template-columns:minmax(0,1fr) 296px;gap:60px;align-items:start}
-.prose p{font-size:1.02rem;color:var(--muted);max-width:62ch}
-.fit{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:22px 24px}
-.fit h4{font-family:var(--mono);font-size:.7rem;font-weight:500;color:var(--signal);margin:0 0 4px}
-.fit dl{margin:0}
-.fit dt{font-family:var(--mono);font-size:.67rem;color:var(--muted);margin-top:16px}
-.fit dd{margin:4px 0 0;font-size:.92rem;line-height:1.5;color:var(--ink)}
-.fit dd.soft{color:var(--muted)}
-.prose .mark{color:var(--ink);font-weight:500;background:var(--signal-soft);padding:1px 4px;border-radius:3px;box-decoration-break:clone}
 
-/* ============ habits ============ */
-.habits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
-.habit{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:22px}
-.habit h4{font-size:1rem;margin-bottom:9px}
-.habit p{font-size:.92rem;color:var(--muted);margin:0}
 
 /* ============ filters ============ */
 .filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:26px}
@@ -386,7 +348,7 @@ figcaption{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top
 .skill:hover{border-color:var(--signal);transform:translateY(-2px)}
 
 /* ============ contact ============ */
-.contact{border-top:0;padding-bottom:26px}
+.contact{border-top:0;padding-bottom:36px}
 .cbox{background:var(--deep);color:#F1F3F6;border-radius:22px;padding:44px 40px;box-shadow:var(--shadow)}
 .cbox h2{font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.08;margin-bottom:14px;max-width:19ch}
 .cbox p{color:#A9B4C0;max-width:56ch}
@@ -416,9 +378,7 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
   .hero-grid{grid-template-columns:1fr;gap:30px}
   .portrait{max-width:240px;margin-top:0}
   .readout{grid-template-columns:repeat(2,1fr)}
-  .habits{grid-template-columns:1fr}
-  .prose-grid{grid-template-columns:1fr;gap:32px}
-  .log-cols{display:none}
+      .log-cols{display:none}
   .rec-head{grid-template-columns:1fr 28px;gap:6px 16px;padding:20px 0}
   .rec-yr{grid-column:1;margin-bottom:8px}
   .rec-name{grid-column:1/-1}
@@ -427,11 +387,10 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
   .log .more-inner{margin-left:0}
 }
 @media (max-width:600px){
-  .wrap{padding:0 18px}
-  .detect .conf{display:none}
+  .wrap{padding-left:18px;padding-right:18px}
   .facts{font-size:.74rem;line-height:1.9}
-  .hero{padding:52px 0 44px}
-  section{padding:58px 0}
+  .hero{padding:34px 0 44px}
+  section{padding:44px 0}
   .readout{grid-template-columns:1fr}
   .tl{grid-template-columns:66px 20px 1fr;column-gap:12px}
   .sgroup{grid-template-columns:1fr;gap:10px}
@@ -441,8 +400,6 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
-  .detect::before{transform:scaleX(1)}
-  .detect::after,.detect .conf{opacity:1}
 }
 
 @media print{
@@ -463,7 +420,6 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
   <div class="wrap">
     <a class="brand" href="#"><span class="dot"></span>Toh Yun Ning</a>
     <nav>
-      <a href="#approach">approach</a>
       <a href="#work">work</a>
       <a href="#experience">experience</a>
       <a href="#skills">skills</a>
@@ -480,18 +436,18 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
 <div class="wrap hero">
   <div class="hero-grid">
     <div>
-      <span class="status"><i></i>Graduated July 2026 — available now</span>
+      <span class="status"><i></i>Open to graduate roles — Penang or Kuala Lumpur</span>
 
-      <h1>I build data systems, then measure whether they <span class="detect">actually work<span class="conf">verified 0.94</span></span></h1>
+      <h1>Toh Yun Ning</h1>
 
       <p class="role"><span id="tw"></span><span class="caret">▍</span></p>
 
-      <p class="lede">Data Science (Hons), TAR UMT. Machine learning for manufacturing inspection, streaming data pipelines, and enterprise database systems — nearly all of it delivered in teams, to a brief.</p>
+      <p class="lede">Data Science (Hons) at TAR UMT, graduating July 2026. I work on machine learning for manufacturing inspection, data pipelines, and database systems. My strongest projects are the ones where I found that a good-looking number was wrong.</p>
 
       <p class="facts">
         <b>CGPA 3.8</b> — President's List, three Dean's List trimesters<br>
         <b>R&amp;D internships</b> at ViTrox Technologies and Gospower Electric<br>
-        <b>Penang-based</b> — open to roles in Penang, Kuala Lumpur or remote
+        <b>Open to</b> AI, data and software roles in Penang or Kuala Lumpur
       </p>
 
       <div class="actions">
@@ -539,64 +495,12 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
   </div>
 </div>
 
-<!-- ========== APPROACH ========== -->
-<section id="approach" class="wrap prose">
-  <div class="shead">
-    <h2>What I'm looking for</h2>
-    <span class="note">Graduate and entry-level roles in AI, data and engineering</span>
-  </div>
-  <div class="prose-grid">
-    <div>
-      <p>Most of my work sits where machine learning meets manufacturing quality. At ViTrox I trained segmentation models on PCB defect data for automated X-ray inspection; my final year project extends that into solder void detection, using data the company sponsored. At Gospower I ran reliability test campaigns on server power supplies and wrote the C# automation around them.</p>
-      <p>The rest is engineering and data platforms — Kafka and Spark pipelines, Oracle PL/SQL, dimensional warehouse design. I'm most useful where a business question has to become a data structure before anyone can answer it.</p>
-      <p>What I'd want a hiring team to know: <span class="mark">my strongest projects are the ones where I found that a good-looking number was wrong.</span> A watermarking model that scored suspiciously flat across every attack. A lexicon with 99.75% coverage that could only retrieve 38% of its own entries. Catching that before it reaches production seems like the whole job.</p>
-    </div>
-
-    <aside class="fit">
-      <h4>at a glance</h4>
-      <dl>
-        <dt>available</dt>
-        <dd>Immediately</dd>
-        <dt>strongest in</dt>
-        <dd>Machine learning for inspection &amp; defect detection</dd>
-        <dt>also strong in</dt>
-        <dd class="soft">Data engineering and enterprise data platforms</dd>
-        <dt>based</dt>
-        <dd>Penang — open to KL or remote</dd>
-        <dt>education</dt>
-        <dd>BSc Data Science (Hons), TAR UMT, 2026</dd>
-      </dl>
-    </aside>
-  </div>
-</section>
-
-<!-- ========== HOW I WORK ========== -->
-<section class="wrap">
-  <div class="shead">
-    <h2>How I work</h2>
-    <span class="note">Three habits, and the evidence behind them</span>
-  </div>
-  <div class="habits">
-    <div class="habit">
-      <h4>Untangling a problem</h4>
-      <p>Testing whether young sandal wearers also wear calf socks, my first analysis came back essentially empty. Rather than writing it up as a null result, I worked out why: nearly all responses sat in one category, so a five-point scale was spreading almost no signal. Recollapsing to binary surfaced the real pattern. The answer was there; the measurement was wrong.</p>
-    </div>
-    <div class="habit">
-      <h4>Explaining it to someone else</h4>
-      <p>On the data engineering pipeline I wrote the system documentation — architecture diagram, process flowcharts, circuit diagrams, schema reference, setup guide — because the project was defended in a group session where any member could be asked about any component. Writing the explanation is how I check I actually understand something.</p>
-    </div>
-    <div class="habit">
-      <h4>Working to a defined role</h4>
-      <p>Nine of my ten projects were team projects, in groups of three to five. Each entry below says which part was mine and which parts weren't, because I'd rather be asked about work I can actually defend. Where the split was genuinely collective, it says that too.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ========== WORK ========== -->
 <section id="work" class="wrap">
   <div class="shead">
-    <h2>Inspection log</h2>
-    <span class="note">Ten projects. Each row records what I found wrong — open one for the full write-up.</span>
+    <h2>Selected projects</h2>
+    <span class="note">Ten projects. Each row says what I found wrong — open one for detail.</span>
   </div>
 
   <div class="logbar">
@@ -627,9 +531,8 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
         <span class="rec-x"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
       <div class="more"><div><div class="more-inner">
-        <p class="role-note">Individual project. Dataset sponsored by ViTrox Technologies and covered by an NDA, so the schematic below illustrates the task rather than showing real data.</p>
-
-        <div class="scrub">
+        <p class="role-note">Individual project. Dataset sponsored by ViTrox Technologies under NDA, so the schematic below illustrates the task rather than showing real data.</p>
+<div class="scrub">
           <div class="scrub-stage" id="stage">
             <svg viewBox="0 0 640 280" aria-hidden="true">
               <defs><radialGradient id="glow" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#3a4250"/><stop offset="100%" stop-color="#11161d"/></radialGradient></defs>
@@ -647,18 +550,15 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
           <input type="range" id="slider" min="0" max="100" value="50" aria-label="Wipe between the X-ray and the predicted void mask">
           <div class="ends"><span>raw X-ray</span><span>predicted mask</span></div>
         </div>
-
-        <p>Voids trapped in Land Grid Array solder joints weaken the electrical and thermal path, but they're hard to see: X-rays give low contrast, irregular shapes, and heavy class imbalance, since a void occupies a tiny fraction of the frame.</p>
-        <p>I modified and compared two segmentation architectures on the same sponsored dataset — SegNeXt, built on cheap convolutional attention, and DeepLabV3+ with online hard example mining to push the loss toward the difficult pixels the imbalance would otherwise drown out.</p>
+        <p>Voids inside LGA solder joints weaken the electrical and thermal path, but X-rays give low contrast and heavy class imbalance. I compared a modified SegNeXt against DeepLabV3+ with online hard example mining, which pushes the loss toward the difficult pixels the imbalance would otherwise drown out.</p>
         <div class="finding">
           <h5>result · mean IoU</h5>
           <div class="bars">
             <div class="bar-row"><div class="bar-lab"><span>Modified SegNeXt</span><span class="v">88.1%</span></div><div class="bar-trk"><span class="bar-fil" data-w="88.1"></span></div></div>
             <div class="bar-row"><div class="bar-lab"><span>Modified DeepLabV3+ (OHEM)</span><span class="v">82.5%</span></div><div class="bar-trk"><span class="bar-fil alt" data-w="82.5"></span></div></div>
           </div>
-          <p class="fine">Pixel accuracy: 97.0% and 94.9% respectively.</p>
+          <p class="fine">Pixel accuracy: 97.0% and 94.9%. The winning model runs behind a Streamlit app, so an inspector sees the overlay rather than a metric.</p>
         </div>
-        <div class="caveat"><b>Deployment.</b> The winning model runs behind a Streamlit application, so an inspector uploads an X-ray and sees the segmentation overlaid rather than reading a metric.</div>
       </div></div></div>
     </article>
 
@@ -676,10 +576,10 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       </button>
       <div class="more"><div><div class="more-inner">
         <p class="role-note">Team of 4. I wrote three of the executive reports; the schema was designed collectively.</p>
-        <p>My reports covered monthly revenue growth, route profitability with seasonal variance, and company performance ranking — each filtering on current-version rows so historical duplicates from SCD Type 2 don't get counted twice.</p>
+        <p>Monthly revenue growth, route profitability with seasonal variance, and company performance ranking — each filtering to current-version rows so SCD Type 2 history isn't counted twice.</p>
         <figure>
           <img src="img/constellation-erd.png" alt="Constellation schema entity relationship diagram: shared date, member, bus, station, route and coupon dimensions connected to booking, ticket, feedback and maintenance fact tables." width="1400" height="1195" loading="lazy">
-          <figcaption>Constellation schema — shared dimensions across several fact tables. Team-designed; my work sat in the reporting layer above it.</figcaption>
+          <figcaption>Constellation schema — shared dimensions across several fact tables.</figcaption>
         </figure>
         <p class="linkrow"><a class="btn" href="https://github.com/YunnNing/Data-Warehousing-PL-SQL">View the repository</a></p>
       </div></div></div>
@@ -701,12 +601,8 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
         <p class="role-note">Team of 4. I owned actuator firmware, orchestration, and feeding logic.</p>
         <p>Sensing and actuation run on separate boards over MQTT — servo noise and blocking delays corrupt load cell readings, so isolating them physically was the only way to get clean weights.</p>
         <figure>
-          <img src="img/iot-architecture.png" alt="Six-layer architecture: ESP32 sensing and actuator boards, MQTT messaging, Node-RED orchestration, Flask and WebSocket application layer, Firebase data layer, and Telegram notifications." width="1000" height="632" loading="lazy">
-          <figcaption>System architecture, one of the diagrams I produced for the project documentation.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/iot-dashboard.png" alt="Live monitoring dashboard showing temperature, humidity, heat index, storage level, leftover level, fan status and RFID activity, with environmental and system statistics below." width="1200" height="576" loading="lazy">
-          <figcaption>Live dashboard fed by the Node-RED layer — storage and leftover levels are the two load cell readings.</figcaption>
+          <img src="img/iot-dashboard.png" alt="Live monitoring dashboard showing temperature, humidity, heat index, storage level, leftover level, fan status and RFID activity." width="1200" height="576" loading="lazy">
+          <figcaption>Live dashboard fed by the Node-RED layer — storage and leftover are the two load cell readings.</figcaption>
         </figure>
         <p class="linkrow"><a class="btn" href="https://github.com/YunnNing/IoT-Smart-Pet-Feeder">View the repository</a></p>
       </div></div></div>
@@ -726,19 +622,14 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       </button>
       <div class="more"><div><div class="more-inner">
         <p class="role-note">Team of 3, one model each. I owned BERT end to end and the shared sampling methodology.</p>
-        <p>We dropped 3-star reviews as genuinely ambiguous, removed duplicates, and sampled down to a workable subset. Rather than assuming a sampling strategy, we ran a preliminary experiment comparing stratified against random balanced sampling — then split the decision: balanced sampling for training so the model learns both classes, stratified for the test set so evaluation reflects the real class distribution.</p>
-        <p>My tuning ran three versions, each answering a diagnosed failure rather than sweeping a grid. Version 1 overfit, so version 2 shortened sequences and raised regularisation. That over-corrected into underfitting, so version 3 walked it back selectively — dropout split asymmetrically between encoder and classifier head, and gradient accumulation to keep effective batch size while allowing noisier steps.</p>
+        <p>We dropped 3-star reviews as ambiguous, then split the sampling decision: balanced for training so the model learns both classes, stratified for the test set so evaluation reflects the real distribution. Tuning ran three versions, each fixing a diagnosed failure rather than sweeping a grid.</p>
         <table class="cmp">
           <tr><th>Model</th><th>Accuracy</th><th>Macro F1</th></tr>
           <tr class="win"><td>BERT (mine)</td><td class="n">97.10%</td><td class="n">96.23%</td></tr>
           <tr><td>RoBERTa-CNN</td><td class="n">97.00%</td><td class="n">—</td></tr>
           <tr><td>SVM + TF-IDF</td><td class="n">94.15%</td><td class="n">93%</td></tr>
         </table>
-        <div class="caveat"><b>Where it fails.</b> Sarcasm. "Oh great, another broken phone" reads as positive, and no amount of tuning fixes that — sarcasm inverts sentiment through context the lexical cues actively contradict.</div>
-        <figure>
-          <img src="img/bert-confusion.png" alt="Confusion matrix showing 491 true negatives, 1451 true positives, 21 false positives and 37 false negatives across 2000 test samples." width="760" height="671" loading="lazy">
-          <figcaption>Test set, 2,000 samples: 21 false positives against 37 false negatives. ROC AUC 0.9933.</figcaption>
-        </figure>
+        <div class="caveat"><b>Where it fails.</b> Sarcasm — it inverts sentiment through context the lexical cues actively contradict.</div>
       </div></div></div>
     </article>
 
@@ -755,14 +646,12 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
         <span class="rec-x"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
       <div class="more"><div><div class="more-inner">
-        <p class="role-note">Team of 5. I built the core operational schema and the transactional logic: scheduling, booking, cancellation, and reporting.</p>
-        <p>Bus operations carry constraints a plain schema can't enforce. A bus can't run two overlapping schedules; a driver can't be double-booked or assigned on an expired licence; cancelling a schedule has to cascade through every ticket and booking attached to it.</p>
-        <p>The scheduling procedure detects conflicts with deliberately different tolerances — a bus can't be scheduled within two hours of another departure, a driver within four. One constraint is mechanical turnaround, the other is human rest. Every operation writes to an audit table capturing old and new values, the user, and the outcome, including failures: an audit trail that only records successes can't tell you who tried something they shouldn't have.</p>
+        <p class="role-note">Team of 5. I built the core schema and the transactional logic: scheduling, booking, cancellation, reporting.</p>
+        <p>Scheduling detects conflicts with different tolerances — two hours for a bus, four for a driver. One is mechanical turnaround, the other human rest. Every operation writes to an audit table including failures, because a trail that only records successes can't tell you who tried something they shouldn't have.</p>
         <div class="finding">
           <h5>the piece I'd walk through on a whiteboard</h5>
-          <p>Cancellation status can't be computed row by row, because one booking can hold tickets across several schedules — the correct status is only knowable once the statement finishes. I used a compound trigger: the row-level phase cancels tickets and collects affected booking IDs into a collection, and the statement-level phase deduplicates and recalculates each booking once. A simple row trigger would either query a mutating table or write the wrong status.</p>
+          <p>One booking can hold tickets across several schedules, so cancellation status is only knowable once the statement finishes. A compound trigger handles it: the row-level phase collects affected booking IDs, the statement-level phase recalculates each once. A simple row trigger would query a mutating table or write the wrong status.</p>
         </div>
-        <div class="caveat"><b>The bug above, in full.</b> The trigger even creates a sequence and never uses it. That's the class of defect I now look for first: correct on the happy path, wrong the second time you run it.</div>
         <p class="linkrow"><a class="btn" href="https://github.com/YunnNing/Advance-DB-Bus-Station-Management-System">View the repository</a></p>
       </div></div></div>
     </article>
@@ -781,10 +670,10 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       </button>
       <div class="more"><div><div class="more-inner">
         <p class="role-note">Team of 3. I owned model integration and evaluation.</p>
-        <p>I owned the retrieval and generation pipeline: chunking strategy chosen by experiment, embedding and model selection under a hardware ceiling, and MMR retrieval to trade a little relevance for diversity across the retrieved set.</p>
+        <p>Chunking strategy chosen by experiment, embedding and model selection under a hardware ceiling, and MMR retrieval to trade a little relevance for diversity across the retrieved set.</p>
         <figure>
-          <img src="img/rag-architecture.png" alt="System architecture: browser and authentication layer over MySQL, a services layer routing PDF processing into ChromaDB embeddings and user queries into the chatbot, with Ollama generating responses and MongoDB storing conversation history." width="1000" height="1084" loading="lazy">
-          <figcaption>Retrieval and generation path, from PDF upload through embedding storage to a grounded answer.</figcaption>
+          <img src="img/rag-architecture.png" alt="System architecture: browser and authentication layer over MySQL, a services layer routing PDF processing into ChromaDB embeddings and user queries into the chatbot, with Ollama generating responses." width="1000" height="1084" loading="lazy">
+          <figcaption>Retrieval and generation path, from PDF upload to a grounded answer.</figcaption>
         </figure>
       </div></div></div>
     </article>
@@ -803,9 +692,9 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       </button>
       <div class="more"><div><div class="more-inner">
         <p class="role-note">Team of 3, one model each. I owned the CNN.</p>
-        <p>The published baseline fell to 0.86 under the same attacks, so on paper this was a comfortable margin. Flagging it as saturation rather than presenting the margin was the more useful result: it tells the next person that normalised correlation stops discriminating in this range, and that a harsher metric is needed to compare models properly.</p>
+        <p>The published baseline fell to 0.86 under the same attacks, so on paper this was a comfortable margin. Flagging saturation was the more useful result — it tells the next person that normalised correlation stops discriminating in this range.</p>
         <figure>
-          <img src="img/watermark-result.png" alt="Six panels: original cover image, watermarked version, and version after combined Gaussian and salt-and-pepper noise attack; below, the original watermark and the recovered watermark, with NC 0.9928 and PSNR 23.21 dB." width="1100" height="744" loading="lazy">
+          <img src="img/watermark-result.png" alt="Original cover image, watermarked version, and version after a combined noise attack, with the original and recovered watermark below." width="1100" height="744" loading="lazy">
           <figcaption>Watermark recovered after a combined noise attack. NC 0.9928, PSNR 23.21 dB.</figcaption>
         </figure>
       </div></div></div>
@@ -825,12 +714,8 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       </button>
       <div class="more"><div><div class="more-inner">
         <p class="role-note">Team of 4. I owned the ingestion and streaming layer: two of three scrapers, the cleaning stage, and the Kafka producer and consumer.</p>
-        <p>Malay NLP resources are thin. The pipeline combines an official dictionary, a proverb corpus, and live news text: articles are published to a Kafka topic, converted to Parquet in HDFS, word-counted through Hadoop MapReduce, enriched with definitions and part-of-speech tags, and loaded into Neo4j as a graph with synonym and antonym edges. Cron drives incremental runs.</p>
-        <div class="finding">
-          <h5>the design decision I'd expect to be asked about</h5>
-          <p>Kafka looks wrong for a batch pipeline — until you notice that scheduling is exactly why you need it. Articles published between scheduled runs sit durably in the topic until the next job consumes them. Decoupling producer from consumer is what makes a cron-driven pipeline safe to miss a beat.</p>
-        </div>
-        <div class="caveat"><b>Why the retrieval failed.</b> Malay is morphologically rich, so exact-match queries against surface forms miss when the stored form carries different affixes. The fix is stemming at query time, not more scraping.</div>
+        <p>Articles publish to a Kafka topic, convert to Parquet in HDFS, get word-counted through MapReduce, and load into Neo4j with synonym and antonym edges. Kafka looks wrong for a batch pipeline until you notice that scheduling is exactly why you need it — articles published between runs sit durably in the topic until the next job consumes them.</p>
+        <div class="caveat"><b>Why retrieval failed.</b> Malay is morphologically rich, so exact-match queries against surface forms miss when the stored form carries different affixes. The fix is stemming at query time, not more scraping.</div>
       </div></div></div>
     </article>
 
@@ -847,10 +732,8 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
         <span class="rec-x"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
       <div class="more"><div><div class="more-inner">
-        <p class="role-note">Team of 5. I designed the questionnaire the whole study ran on, owned one of five hypotheses, and wrote the closing recommendations.</p>
-        <p>I designed the survey instrument every team member's analysis depended on: ordinal scales with consistent bands so responses could be encoded rather than retrofitted, income captured as ranges to avoid non-response on a sensitive question, and a multiple-choice grid so one question covered four product categories without survey fatigue.</p>
-        <p>Writing the closing section meant working with a mixed evidence base: two of five hypotheses reached significance, three didn't. I structured the recommendations by confidence level rather than treating every finding as equally actionable — firm proposals where the results supported them, clearly labelled directional guidance where they didn't.</p>
-        <div class="caveat"><b>How I reported it.</b> I recommended against a mainstream bundle and scoped it to a limited-edition niche instead, and described the association as a non-significant trend rather than overstating it to make the story cleaner.</div>
+        <p class="role-note">Team of 5. I designed the questionnaire, owned one of five hypotheses, and wrote the closing recommendations.</p>
+        <p>The survey instrument every team member's analysis depended on: ordinal scales with consistent bands, income as ranges to avoid non-response, a multiple-choice grid covering four categories in one question. Two of five hypotheses reached significance, so I structured the recommendations by confidence level rather than treating every finding as equally actionable.</p>
       </div></div></div>
     </article>
 
@@ -868,7 +751,7 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       </button>
       <div class="more"><div><div class="more-inner">
         <p class="role-note">Team of 4.</p>
-        <p>Random Forest won at 0.84 macro F1. In a clinical setting survival and mortality matter equally, so the averaging choice isn't a formality — it decides whether the evaluation can see the error that would actually harm someone.</p>
+        <p>Random Forest won at 0.84 macro F1. Survival and mortality matter equally in a clinical setting, so the averaging choice decides whether the evaluation can even see the error that would actually harm someone.</p>
       </div></div></div>
     </article>
 
@@ -889,10 +772,9 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       <h3>R&amp;D Intern</h3>
       <div class="org">Gospower Electric Technology Co., Ltd. — Dongguan, China</div>
       <ul>
-        <li>Rotated across a server power-supply manufacturing pipeline — production, SMT and AOI, EMC and reliability testing, automation, and QC.</li>
+        <li>Rotated across a server power-supply pipeline: production, SMT and AOI, EMC and reliability testing, automation, QC.</li>
         <li>Ran automated test campaigns on a Chroma 8000 system across eleven test types, including surge current, over-current protection, and dynamic load.</li>
-        <li>Built C# test-automation software (Windows Forms, NI-VISA) for the in-house automated test system, and completed STM32 firmware exercises covering interrupts, PWM, and ADC/DMA.</li>
-        <li>Worked directly with yield and defect-tracking pipelines in high-volume electronics manufacturing.</li>
+        <li>Built C# test-automation software (Windows Forms, NI-VISA) for the in-house test system, plus STM32 firmware exercises.</li>
       </ul>
     </div>
 
@@ -942,8 +824,8 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
 <!-- ========== CONTACT ========== -->
 <section id="contact" class="wrap contact">
   <div class="cbox">
-    <h2>Available now</h2>
-    <p>Graduated July 2026. Based in Penang and open to roles there, in Kuala Lumpur, or remote. Happy to walk through any of these projects in more detail, including the parts that didn't work.</p>
+    <h2>Available from July 2026</h2>
+    <p>Looking for a graduate role in AI, data or software engineering, in Penang or Kuala Lumpur. Happy to walk through any project in more detail, including the parts that didn't work.</p>
     <div class="clinks">
       <a href="mailto:yunningtoh@gmail.com">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
@@ -994,25 +876,16 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
     syncLabel();
   });
 
-  /* ---- typewriter ---- */
-  var lines = [
-    "segmentation models for X-ray inspection",
-    "streaming pipelines that survive a missed run",
-    "database logic that fails loudly, not quietly",
-    "and checking whether the number is real"
-  ];
+  /* ---- greeting ---- */
+  var greeting = "Hi there \u2014 thanks for stopping by.";
   var tw = document.getElementById("tw");
-  if (reduce) { tw.textContent = lines[0]; }
-  else {
-    var li = 0, ci = 0, back = false;
+  if (reduce) {
+    tw.textContent = greeting;
+  } else {
+    var ci = 0;
     (function type(){
-      var s = lines[li];
-      ci += back ? -1 : 1;
-      tw.textContent = s.slice(0, ci);
-      var wait = back ? 26 : 46;
-      if (!back && ci === s.length) { back = true; wait = 1700; }
-      else if (back && ci === 0) { back = false; li = (li + 1) % lines.length; wait = 320; }
-      setTimeout(type, wait);
+      tw.textContent = greeting.slice(0, ++ci);
+      if (ci < greeting.length) setTimeout(type, 55);
     })();
   }
 

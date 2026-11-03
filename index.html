@@ -6,7 +6,7 @@
 <title>Toh Yun Ning — Data Science</title>
 <meta name="description" content="Data Science graduate (TAR UMT, 2026). Machine learning for manufacturing inspection, data engineering, and enterprise database systems.">
 <meta property="og:title" content="Toh Yun Ning — Data Science">
-<meta property="og:description" content="Machine learning for manufacturing inspection, streaming data pipelines, and enterprise database systems. Graduating July 2026.">
+<meta property="og:description" content="Machine learning for manufacturing inspection, streaming data pipelines, and enterprise database systems. Graduated July 2026.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yunnning.github.io/">
 <meta property="og:image" content="https://yunnning.github.io/img/og.png">
@@ -442,10 +442,10 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
 
       <p class="role"><span id="tw"></span><span class="caret">▍</span></p>
 
-      <p class="lede">Data Science (Hons) at TAR UMT, graduating July 2026. I work on machine learning for manufacturing inspection, data pipelines, and database systems.</p>
+      <p class="lede">Data Science (Hons) graduate from TAR UMT, July 2026. I work on machine learning for manufacturing inspection, LLM and RAG applications, data pipelines, and database systems.</p>
 
       <p class="facts">
-        <b>CGPA 3.8</b> — President's List, three Dean's List trimesters<br>
+        <b>CGPA 3.8</b> — full merit scholarship, President's List, three Dean's List trimesters<br>
         <b>R&amp;D internships</b> at ViTrox Technologies and Gospower Electric<br>
         <b>Open to</b> AI, data and software roles in Penang or Kuala Lumpur
       </p>
@@ -473,8 +473,8 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
 
   <div class="readout">
     <div class="cell" style="--d:0s">
-      <div class="v num" data-target="88.1" data-dp="1" data-suffix="%">0%</div>
-      <div class="u">mean IoU</div>
+      <div class="v num" data-target="85.8" data-dp="1" data-suffix="%">0%</div>
+      <div class="u">mean IoU, 5-fold CV</div>
       <div class="w">Solder void segmentation on PCB X-rays</div>
     </div>
     <div class="cell" style="--d:.1s">
@@ -527,7 +527,7 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
           <span class="sub">Semantic segmentation on X-rays to find voids inside solder joints, where an inspector sees only faint grey-on-grey contrast.</span>
           <span class="tags"><span class="tag">PyTorch</span><span class="tag">SegNeXt</span><span class="tag">DeepLabV3+</span><span class="tag">Streamlit</span></span>
         </span>
-        <span class="rec-find">Pixel accuracy flatters the model — 97% while a void covers a sliver of the frame. A model predicting "no void" everywhere still scores well, so mIoU is the number I report.</span>
+        <span class="rec-find">My first split let near-copies of test images leak into training. Re-run with five-fold cross-validation split by source image, SegNeXt's 5.6-point lead shrank to 0.3 — it came from the training setup, not the architecture.</span>
         <span class="rec-x"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
       <div class="more"><div><div class="more-inner">
@@ -550,14 +550,14 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
           <input type="range" id="slider" min="0" max="100" value="50" aria-label="Wipe between the X-ray and the predicted void mask">
           <div class="ends"><span>raw X-ray</span><span>predicted mask</span></div>
         </div>
-        <p>Voids inside LGA solder joints weaken the electrical and thermal path, but X-rays give low contrast and heavy class imbalance. I compared a modified SegNeXt against DeepLabV3+ with online hard example mining, which pushes the loss toward the difficult pixels the imbalance would otherwise drown out.</p>
+        <p>Voids inside LGA solder joints weaken the electrical and thermal path, but X-rays give low contrast and heavy class imbalance. I compared a modified SegNeXt against DeepLabV3+ with online hard example mining, which pushes the loss toward the difficult pixels the imbalance would otherwise drown out. After submission I rebuilt the evaluation: one shared training recipe, five folds split by source image, and a pass, refer or fail decision per joint from its predicted void share.</p>
         <div class="finding">
           <h5>result · mean IoU</h5>
           <div class="bars">
-            <div class="bar-row"><div class="bar-lab"><span>Modified SegNeXt</span><span class="v">88.1%</span></div><div class="bar-trk"><span class="bar-fil" data-w="88.1"></span></div></div>
-            <div class="bar-row"><div class="bar-lab"><span>Modified DeepLabV3+ (OHEM)</span><span class="v">82.5%</span></div><div class="bar-trk"><span class="bar-fil alt" data-w="82.5"></span></div></div>
+            <div class="bar-row"><div class="bar-lab"><span>SegNeXt (6.0M parameters)</span><span class="v">85.8%</span></div><div class="bar-trk"><span class="bar-fil" data-w="85.8"></span></div></div>
+            <div class="bar-row"><div class="bar-lab"><span>DeepLabV3+ (28.6M parameters)</span><span class="v">85.5%</span></div><div class="bar-trk"><span class="bar-fil alt" data-w="85.5"></span></div></div>
           </div>
-          <p class="fine">Pixel accuracy: 97.0% and 94.9%. The winning model runs behind a Streamlit app, so an inspector sees the overlay rather than a metric.</p>
+          <p class="fine">Five folds over 111 images and 873 joints. Void IoU 0.743 vs 0.741, and predicted void share within about 2.5 points of the truth per joint. Equal accuracy at a fifth of the size makes SegNeXt the one to deploy; it runs behind a Streamlit app, so an inspector sees the overlay rather than a metric.</p>
         </div>
       </div></div></div>
     </article>
@@ -772,9 +772,10 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       <h3>R&amp;D Intern</h3>
       <div class="org">Gospower Electric Technology Co., Ltd. — Dongguan, China</div>
       <ul>
-        <li>Rotated across a server power-supply pipeline: production, SMT and AOI, EMC and reliability testing, automation, QC.</li>
+        <li>Rotated across seven departments of a server power-supply plant: production, SMT and AOI, EMC and reliability testing, automation, QC.</li>
         <li>Ran automated test campaigns on a Chroma 8000 system across eleven test types, including surge current, over-current protection, and dynamic load.</li>
-        <li>Built C# test-automation software (Windows Forms, NI-VISA) for the in-house test system, plus STM32 firmware exercises.</li>
+        <li>Built C# test-automation software (Windows Forms, NI-VISA) for the in-house test system, replacing manual compilation of test results, and reconciled its output against the manual records before the team relied on it.</li>
+        <li>Validated PMBus telemetry against bench measurements and completed STM32 firmware exercises.</li>
       </ul>
     </div>
 
@@ -784,7 +785,7 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       <h3>R&amp;D Intern</h3>
       <div class="org">ViTrox Technologies Sdn Bhd — Batu Kawan, Penang</div>
       <ul>
-        <li>Labelled PCB defect datasets and trained PyTorch image segmentation models supporting automated X-ray inspection research.</li>
+        <li>Trained and evaluated multiple deep learning models for automated X-ray inspection research, and prepared and labelled the PCB defect datasets.</li>
         <li>Produced technical evaluation reports benchmarking model performance for the R&amp;D team.</li>
       </ul>
     </div>
@@ -795,7 +796,7 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
 <section id="skills" class="wrap">
   <div class="shead">
     <h2>Technical skills</h2>
-    <span class="note">BSc Data Science (Hons), TAR UMT 2024–2026 · CGPA 3.8 · Diploma in Computer Science, CGPA 3.9</span>
+    <span class="note">BSc Data Science (Hons), TAR UMT 2024–2026 · CGPA 3.8, full merit scholarship · Diploma in Computer Science, CGPA 3.9</span>
   </div>
   <div class="skills">
     <div class="sgroup">
@@ -807,16 +808,24 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
       <div class="slist"><span class="skill">PyTorch</span><span class="skill">TensorFlow</span><span class="skill">scikit-learn</span><span class="skill">BERT</span><span class="skill">semantic segmentation</span><span class="skill">NLP</span></div>
     </div>
     <div class="sgroup">
+      <h4>generative AI</h4>
+      <div class="slist"><span class="skill">LLMs</span><span class="skill">RAG</span><span class="skill">LangChain</span><span class="skill">Ollama / LLaMA 3</span><span class="skill">vector databases</span><span class="skill">text embeddings</span></div>
+    </div>
+    <div class="sgroup">
       <h4>data engineering</h4>
-      <div class="slist"><span class="skill">Kafka</span><span class="skill">PySpark</span><span class="skill">Hadoop / MapReduce</span><span class="skill">dimensional modelling</span><span class="skill">SCD Type 2</span></div>
+      <div class="slist"><span class="skill">Kafka</span><span class="skill">PySpark</span><span class="skill">Hadoop / MapReduce</span><span class="skill">ETL</span><span class="skill">dimensional modelling</span><span class="skill">SCD Type 2</span></div>
     </div>
     <div class="sgroup">
       <h4>databases</h4>
-      <div class="slist"><span class="skill">Oracle</span><span class="skill">MySQL</span><span class="skill">Neo4j</span><span class="skill">Redis</span><span class="skill">Firebase</span><span class="skill">ChromaDB</span></div>
+      <div class="slist"><span class="skill">Oracle</span><span class="skill">MySQL</span><span class="skill">Neo4j</span><span class="skill">Redis</span><span class="skill">MongoDB</span><span class="skill">Firebase</span><span class="skill">ChromaDB</span></div>
     </div>
     <div class="sgroup">
       <h4>tools</h4>
-      <div class="slist"><span class="skill">Power BI</span><span class="skill">SAS Viya</span><span class="skill">Git</span><span class="skill">Linux</span><span class="skill">Streamlit</span><span class="skill">Node-RED</span><span class="skill">Arduino IDE</span></div>
+      <div class="slist"><span class="skill">Power BI</span><span class="skill">SAS Viya</span><span class="skill">Git</span><span class="skill">Linux</span><span class="skill">Streamlit</span><span class="skill">Flask</span><span class="skill">REST APIs</span><span class="skill">Node-RED</span><span class="skill">MQTT</span><span class="skill">Arduino IDE</span></div>
+    </div>
+    <div class="sgroup">
+      <h4>certifications</h4>
+      <div class="slist"><span class="skill">Cisco CCNAv7</span><span class="skill">AWS Academy Cloud Architecting</span><span class="skill">AWS Academy Cloud Foundations</span><span class="skill">Six Sigma Yellow Belt</span><span class="skill">Business Analysis Fundamentals</span><span class="skill">Kanban Essentials</span></div>
     </div>
   </div>
 </section>
@@ -824,7 +833,7 @@ footer{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:0 0 4
 <!-- ========== CONTACT ========== -->
 <section id="contact" class="wrap contact">
   <div class="cbox">
-    <h2>Available from July 2026</h2>
+    <h2>Available now</h2>
     <p>Looking for a graduate role in AI, data or software engineering, in Penang or Kuala Lumpur. Happy to walk through any project in more detail.</p>
     <div class="clinks">
       <a href="mailto:yunningtoh@gmail.com">
